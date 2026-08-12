@@ -23,6 +23,8 @@ RUN composer install \
 # ---- Stage 3: runtime image ----
 FROM php:8.2-apache AS runtime
 
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
+
 RUN apt-get update && apt-get install -y --no-install-recommends \
         libpq-dev \
         libzip-dev \
