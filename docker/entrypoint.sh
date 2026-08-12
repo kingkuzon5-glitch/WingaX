@@ -11,6 +11,7 @@ php artisan route:cache
 php artisan view:cache
 
 php artisan storage:link || true
+php artisan db:ensure-schema
 php artisan migrate --force
 
 exec apache2-foreground
