@@ -1,0 +1,153 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    /* WingaX design tokens — ported from stitch_wingax_social_commerce_platform/vibrant_social_commerce/DESIGN.md */
+
+    /* Colors */
+    --color-secondary-fixed: #e5e2e1;
+    --color-on-tertiary-fixed-variant: #005322;
+    --color-on-primary: #ffffff;
+    --color-tertiary-fixed: #66ff8e;
+    --color-outline: #8f7065;
+    --color-primary-fixed: #ffdbce;
+    --color-tertiary: #006d2f;
+    --color-on-background: #1a1c1c;
+    --color-error: #ba1a1a;
+    --color-on-error-container: #93000a;
+    --color-tertiary-fixed-dim: #3de273;
+    --color-on-secondary-fixed-variant: #474646;
+    --color-surface-tint: #a63b00;
+    --color-inverse-surface: #2f3131;
+    --color-surface-dim: #dadada;
+    --color-outline-variant: #e4bfb1;
+    --color-primary-container: #ff5f00;
+    --color-inverse-on-surface: #f1f1f1;
+    --color-secondary-container: #e5e2e1;
+    --color-on-surface-variant: #5b4137;
+    --color-surface-bright: #f9f9f9;
+    --color-surface-container-highest: #e2e2e2;
+    --color-on-secondary-container: #656464;
+    --color-on-primary-container: #531a00;
+    --color-surface-container: #eeeeee;
+    --color-background: #f9f9f9;
+    --color-tertiary-container: #00aa4d;
+    --color-secondary-fixed-dim: #c8c6c5;
+    --color-on-tertiary-fixed: #002109;
+    --color-on-error: #ffffff;
+    --color-surface-container-high: #e8e8e8;
+    --color-on-tertiary-container: #003413;
+    --color-on-secondary: #ffffff;
+    --color-on-primary-fixed-variant: #7f2b00;
+    --color-error-container: #ffdad6;
+    --color-secondary: #5f5e5e;
+    --color-on-tertiary: #ffffff;
+    --color-primary: #a63b00;
+    --color-primary-fixed-dim: #ffb599;
+    --color-on-secondary-fixed: #1c1b1b;
+    --color-on-primary-fixed: #370e00;
+    --color-on-surface: #1a1c1c;
+    --color-surface: #f9f9f9;
+    --color-inverse-primary: #ffb599;
+    --color-surface-variant: #e2e2e2;
+    --color-surface-container-lowest: #ffffff;
+    --color-surface-container-low: #f3f3f3;
+    --color-whatsapp: #25d366;
+    --color-whatsapp-dark: #128c7e;
+
+    /* Border radius */
+    --radius: 1rem;
+    --radius-sm: 0.5rem;
+    --radius-md: 1.5rem;
+    --radius-lg: 2rem;
+    --radius-xl: 3rem;
+    --radius-full: 9999px;
+
+    /* Spacing */
+    --spacing-base: 4px;
+    --spacing-xs: 8px;
+    --spacing-sm: 16px;
+    --spacing-md: 24px;
+    --spacing-lg: 32px;
+    --spacing-xl: 48px;
+    --spacing-edge-margin: 20px;
+    --spacing-gutter: 12px;
+
+    /* Font families */
+    --font-body-lg: 'Inter', sans-serif;
+    --font-label-bold: 'Inter', sans-serif;
+    --font-title-md: 'Montserrat', sans-serif;
+    --font-body-sm: 'Inter', sans-serif;
+    --font-headline-lg-mobile: 'Montserrat', sans-serif;
+    --font-display-lg: 'Montserrat', sans-serif;
+    --font-headline-lg: 'Montserrat', sans-serif;
+
+    /* Font sizes (size / line-height / weight / letter-spacing) */
+    --text-body-lg: 16px;
+    --text-body-lg--line-height: 24px;
+    --text-body-lg--font-weight: 400;
+
+    --text-label-bold: 12px;
+    --text-label-bold--line-height: 16px;
+    --text-label-bold--letter-spacing: 0.05em;
+    --text-label-bold--font-weight: 700;
+
+    --text-title-md: 20px;
+    --text-title-md--line-height: 28px;
+    --text-title-md--font-weight: 600;
+
+    --text-body-sm: 14px;
+    --text-body-sm--line-height: 20px;
+    --text-body-sm--font-weight: 400;
+
+    --text-headline-lg-mobile: 24px;
+    --text-headline-lg-mobile--line-height: 32px;
+    --text-headline-lg-mobile--font-weight: 700;
+
+    --text-display-lg: 48px;
+    --text-display-lg--line-height: 56px;
+    --text-display-lg--letter-spacing: -0.02em;
+    --text-display-lg--font-weight: 800;
+
+    --text-headline-lg: 32px;
+    --text-headline-lg--line-height: 40px;
+    --text-headline-lg--letter-spacing: -0.01em;
+    --text-headline-lg--font-weight: 700;
+
+    --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+@utility no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+@utility pb-safe {
+    padding-bottom: env(safe-area-inset-bottom, 16px);
+}
+
+@utility glass {
+    background-color: color-mix(in oklab, var(--color-surface) 70%, transparent);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+@utility snap-always {
+    scroll-snap-stop: always;
+}
+
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.material-symbols-outlined.filled {
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
